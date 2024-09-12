@@ -8,16 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1700F5642C80C8C200B0DC61 /* forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5632C80C8C200B0DC61 /* forest.mp3 */; };
-		1700F56F2C8A9E6200B0DC61 /* 06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5652C8A9E6100B0DC61 /* 06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3 */; };
-		1700F5702C8A9E6200B0DC61 /* 01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5662C8A9E6100B0DC61 /* 01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3 */; };
-		1700F5712C8A9E6200B0DC61 /* 02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5672C8A9E6200B0DC61 /* 02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3 */; };
-		1700F5722C8A9E6200B0DC61 /* 07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5682C8A9E6200B0DC61 /* 07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3 */; };
-		1700F5732C8A9E6200B0DC61 /* 03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5692C8A9E6200B0DC61 /* 03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3 */; };
-		1700F5742C8A9E6200B0DC61 /* 08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F56A2C8A9E6200B0DC61 /* 08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3 */; };
-		1700F5752C8A9E6200B0DC61 /* 04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F56B2C8A9E6200B0DC61 /* 04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3 */; };
-		1700F5762C8A9E6200B0DC61 /* 09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F56C2C8A9E6200B0DC61 /* 09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3 */; };
-		1700F5772C8A9E6200B0DC61 /* 10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F56D2C8A9E6200B0DC61 /* 10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3 */; };
-		1700F5782C8A9E6200B0DC61 /* 05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F56E2C8A9E6200B0DC61 /* 05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3 */; };
 		1700F57A2C8AA03300B0DC61 /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F5792C8AA03300B0DC61 /* PlayList.swift */; };
 		1700F57C2C8BA64800B0DC61 /* PlayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F57B2C8BA64800B0DC61 /* PlayListView.swift */; };
 		17B72EB02C677ACB00C2CE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */; };
@@ -32,16 +22,6 @@
 
 /* Begin PBXFileReference section */
 		1700F5632C80C8C200B0DC61 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
-		1700F5652C8A9E6100B0DC61 /* 06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3"; sourceTree = "<group>"; };
-		1700F5662C8A9E6100B0DC61 /* 01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3"; sourceTree = "<group>"; };
-		1700F5672C8A9E6200B0DC61 /* 02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3"; sourceTree = "<group>"; };
-		1700F5682C8A9E6200B0DC61 /* 07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3"; sourceTree = "<group>"; };
-		1700F5692C8A9E6200B0DC61 /* 03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3"; sourceTree = "<group>"; };
-		1700F56A2C8A9E6200B0DC61 /* 08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3"; sourceTree = "<group>"; };
-		1700F56B2C8A9E6200B0DC61 /* 04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3"; sourceTree = "<group>"; };
-		1700F56C2C8A9E6200B0DC61 /* 09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3"; sourceTree = "<group>"; };
-		1700F56D2C8A9E6200B0DC61 /* 10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3"; sourceTree = "<group>"; };
-		1700F56E2C8A9E6200B0DC61 /* 05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3"; sourceTree = "<group>"; };
 		1700F5792C8AA03300B0DC61 /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		1700F57B2C8BA64800B0DC61 /* PlayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListView.swift; sourceTree = "<group>"; };
 		17B72EAC2C677ACB00C2CE2A /* PlojectYPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlojectYPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,16 +66,6 @@
 		17B72EAE2C677ACB00C2CE2A /* PlojectYPL */ = {
 			isa = PBXGroup;
 			children = (
-				1700F5662C8A9E6100B0DC61 /* 01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3 */,
-				1700F5672C8A9E6200B0DC61 /* 02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3 */,
-				1700F5692C8A9E6200B0DC61 /* 03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3 */,
-				1700F56B2C8A9E6200B0DC61 /* 04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3 */,
-				1700F56E2C8A9E6200B0DC61 /* 05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3 */,
-				1700F5652C8A9E6100B0DC61 /* 06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3 */,
-				1700F5682C8A9E6200B0DC61 /* 07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3 */,
-				1700F56A2C8A9E6200B0DC61 /* 08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3 */,
-				1700F56C2C8A9E6200B0DC61 /* 09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3 */,
-				1700F56D2C8A9E6200B0DC61 /* 10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3 */,
 				1700F5632C80C8C200B0DC61 /* forest.mp3 */,
 				17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */,
 				17B72EB12C677ACB00C2CE2A /* SceneDelegate.swift */,
@@ -171,19 +141,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B72EB92C677ACC00C2CE2A /* Assets.xcassets in Resources */,
-				1700F5772C8A9E6200B0DC61 /* 10_JPT 650+_파트1_유닛2_JPT기출문제로 훈련하기.mp3 in Resources */,
-				1700F5762C8A9E6200B0DC61 /* 09_JPT 650+_파트1_유닛2_JPT기출문제 풀이 전략.mp3 in Resources */,
 				17B72EBC2C677ACC00C2CE2A /* Base in Resources */,
-				1700F5742C8A9E6200B0DC61 /* 08_JPT 650+_파트1_유닛2_빈출 사진과 정답 문장.mp3 in Resources */,
-				1700F5722C8A9E6200B0DC61 /* 07_JPT 650+_파트1_유닛2_핵심 기출 어휘 및 표현.mp3 in Resources */,
-				1700F56F2C8A9E6200B0DC61 /* 06_JPT 650+_파트1_유닛1_기출 확인 문제.mp3 in Resources */,
-				1700F5732C8A9E6200B0DC61 /* 03_JPT 650+_파트1_유닛1_JPT기출문제 풀이 전략.mp3 in Resources */,
-				1700F5782C8A9E6200B0DC61 /* 05_JPT 650+_파트1_유닛1_빈출 어휘로 실력 다지기.mp3 in Resources */,
 				17B72EB72C677ACB00C2CE2A /* Base in Resources */,
-				1700F5752C8A9E6200B0DC61 /* 04_JPT 650+_파트1_유닛1_JPT기출문제로 훈련하기.mp3 in Resources */,
 				1700F5642C80C8C200B0DC61 /* forest.mp3 in Resources */,
-				1700F5702C8A9E6200B0DC61 /* 01_JPT 650+_파트1_유닛1_핵심 기출 어휘 및 표현.mp3 in Resources */,
-				1700F5712C8A9E6200B0DC61 /* 02_JPT 650+_파트1_유닛1_빈출 사진과 정답 문장.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

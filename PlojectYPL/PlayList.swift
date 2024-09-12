@@ -29,14 +29,40 @@ class PlayList {
   var urls: [URL] = []
 
   func loadList() {
-    let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+    let fileManager = FileManager.default
+    let documentsUrl: URL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    let filePath: URL = documentsUrl.appendingPathComponent("ypl_music")
     
-    guard urls != nil else {
-      print("error: urls is nil")
-      return
+    if !fileManager.fileExists(atPath: filePath.path) {
+      do {
+        try fileManager.createDirectory(atPath: filePath.path, withIntermediateDirectories: true, attributes: nil)
+      } catch {
+        NSLog("error: Couldn't create document directory")
+      }
     }
     
-    self.urls = urls!
+    do {
+      let directoryContents: [String] = try fileManager.contentsOfDirectory(atPath: filePath.path)
+      print(directoryContents)
+      if directoryContents.isEmpty {
+        urls = []
+        return
+      }
+      
+      var _urls: [URL] = []
+      
+      for item in directoryContents {
+        let fileURL = filePath.appendingPathComponent(item)
+
+        if fileURL.pathExtension != "mp3" {
+          continue
+        }
+        _urls.append(fileURL)
+      }
+      self.urls = _urls
+    } catch  {
+      NSLog(error.localizedDescription)
+    }
     
     print("loaded urls.... count:\(self.urls.count)")
   }

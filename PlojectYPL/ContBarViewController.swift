@@ -69,7 +69,7 @@ class ContBarViewController: UIViewController {
         avPlayer?.prepareToPlay()
         avPlayer?.play()
       } catch {
-        print(error)
+        NSLog(error.localizedDescription)
       }
     }
   }
@@ -139,7 +139,7 @@ class ContBarViewController: UIViewController {
       avPlayer?.prepareToPlay()
       avPlayer?.play()
     } catch  {
-      print(error)
+      NSLog(error.localizedDescription)
     }
   }
 }

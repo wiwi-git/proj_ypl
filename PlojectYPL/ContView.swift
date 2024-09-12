@@ -78,7 +78,6 @@ class ContBarView: UIView {
   }
   
   func setPlayIcon(isPlay: Bool?) {
-    print("call setPlayIcon \(isPlay)")
     playButton.setTitle(isPlay ?? false ? "❚❚" : "▶", for: .normal)
     setNeedsDisplay()
   }
