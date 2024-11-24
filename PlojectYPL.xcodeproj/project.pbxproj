@@ -11,10 +11,11 @@
 		1700F57A2C8AA03300B0DC61 /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F5792C8AA03300B0DC61 /* PlayList.swift */; };
 		1700F57C2C8BA64800B0DC61 /* PlayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F57B2C8BA64800B0DC61 /* PlayListView.swift */; };
 		1700F57E2C93D41100B0DC61 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F57D2C93D41100B0DC61 /* PlayListCell.swift */; };
+		1700F5802CC968CA00B0DC61 /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F57F2CC968CA00B0DC61 /* MusicInfo.swift */; };
+		1700F5832CE1FA5700B0DC61 /* NewMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F5822CE1FA5700B0DC61 /* NewMainVC.swift */; };
 		17B72EB02C677ACB00C2CE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */; };
 		17B72EB22C677ACB00C2CE2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B72EB12C677ACB00C2CE2A /* SceneDelegate.swift */; };
 		17B72EB42C677ACB00C2CE2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B72EB32C677ACB00C2CE2A /* MainViewController.swift */; };
-		17B72EB72C677ACB00C2CE2A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17B72EB62C677ACB00C2CE2A /* Base */; };
 		17B72EB92C677ACC00C2CE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B72EB82C677ACC00C2CE2A /* Assets.xcassets */; };
 		17B72EBC2C677ACC00C2CE2A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17B72EBB2C677ACC00C2CE2A /* Base */; };
 		17B72EC42C6794BD00C2CE2A /* ContBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B72EC32C6794BD00C2CE2A /* ContBarViewController.swift */; };
@@ -26,11 +27,12 @@
 		1700F5792C8AA03300B0DC61 /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		1700F57B2C8BA64800B0DC61 /* PlayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListView.swift; sourceTree = "<group>"; };
 		1700F57D2C93D41100B0DC61 /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
+		1700F57F2CC968CA00B0DC61 /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
+		1700F5822CE1FA5700B0DC61 /* NewMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainVC.swift; sourceTree = "<group>"; };
 		17B72EAC2C677ACB00C2CE2A /* PlojectYPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlojectYPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17B72EB12C677ACB00C2CE2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17B72EB32C677ACB00C2CE2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		17B72EB62C677ACB00C2CE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17B72EB82C677ACC00C2CE2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17B72EBB2C677ACC00C2CE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17B72EBD2C677ACC00C2CE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1700F5812CE1F9F400B0DC61 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				17B72EB32C677ACB00C2CE2A /* MainViewController.swift */,
+				17B72EC32C6794BD00C2CE2A /* ContBarViewController.swift */,
+				17B72EC52C6A042D00C2CE2A /* ContView.swift */,
+				1700F57B2C8BA64800B0DC61 /* PlayListView.swift */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
 		17B72EA32C677ACB00C2CE2A = {
 			isa = PBXGroup;
 			children = (
@@ -71,16 +84,14 @@
 				1700F5632C80C8C200B0DC61 /* forest.mp3 */,
 				17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */,
 				17B72EB12C677ACB00C2CE2A /* SceneDelegate.swift */,
-				17B72EB32C677ACB00C2CE2A /* MainViewController.swift */,
-				17B72EB52C677ACB00C2CE2A /* Main.storyboard */,
 				17B72EB82C677ACC00C2CE2A /* Assets.xcassets */,
 				17B72EBA2C677ACC00C2CE2A /* LaunchScreen.storyboard */,
 				17B72EBD2C677ACC00C2CE2A /* Info.plist */,
-				17B72EC32C6794BD00C2CE2A /* ContBarViewController.swift */,
-				17B72EC52C6A042D00C2CE2A /* ContView.swift */,
+				1700F5822CE1FA5700B0DC61 /* NewMainVC.swift */,
 				1700F5792C8AA03300B0DC61 /* PlayList.swift */,
-				1700F57B2C8BA64800B0DC61 /* PlayListView.swift */,
+				1700F57F2CC968CA00B0DC61 /* MusicInfo.swift */,
 				1700F57D2C93D41100B0DC61 /* PlayListCell.swift */,
+				1700F5812CE1F9F400B0DC61 /* old */,
 			);
 			path = PlojectYPL;
 			sourceTree = "<group>";
@@ -145,7 +156,6 @@
 			files = (
 				17B72EB92C677ACC00C2CE2A /* Assets.xcassets in Resources */,
 				17B72EBC2C677ACC00C2CE2A /* Base in Resources */,
-				17B72EB72C677ACB00C2CE2A /* Base in Resources */,
 				1700F5642C80C8C200B0DC61 /* forest.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1700F5832CE1FA5700B0DC61 /* NewMainVC.swift in Sources */,
 				17B72EC62C6A042D00C2CE2A /* ContView.swift in Sources */,
+				1700F5802CC968CA00B0DC61 /* MusicInfo.swift in Sources */,
 				17B72EB42C677ACB00C2CE2A /* MainViewController.swift in Sources */,
 				17B72EB02C677ACB00C2CE2A /* AppDelegate.swift in Sources */,
 				1700F57A2C8AA03300B0DC61 /* PlayList.swift in Sources */,
@@ -171,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		17B72EB52C677ACB00C2CE2A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17B72EB62C677ACB00C2CE2A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17B72EBA2C677ACC00C2CE2A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -242,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -299,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -319,17 +323,23 @@
 				DEVELOPMENT_TEAM = Q77G9L4656;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlojectYPL/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YPL;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "이 앱은 사용자의 앨범에 접근합니다. 앨범의 파일을 재생하기 위함입니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.dy.PlojectYPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -352,17 +362,23 @@
 				DEVELOPMENT_TEAM = Q77G9L4656;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PlojectYPL/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YPL;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "이 앱은 사용자의 앨범에 접근합니다. 앨범의 파일을 재생하기 위함입니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.dy.PlojectYPL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

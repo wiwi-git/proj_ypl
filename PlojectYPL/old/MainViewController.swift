@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var contVC: ContBarViewController?
@@ -24,15 +25,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-    NotificationCenter.default.addObserver(forName: .changedContInfo, object: nil, queue: nil) {  _  in
-      self.playListView?.reloadData()
-    }
-    
     playList.loadList()
     setLayout()
+    
+    NotificationCenter.default.addObserver(forName: .changedContInfo, object: nil, queue: nil) {  _  in
+      self.playListView?.reloadData()
+//      if let currentMusic = self.playList.currentMusic {
+//        self.updateMPNowPlayingInfoCenter(music: currentMusic)
+//      }
+    }
   }
   
   var playListView: UITableView?
+  
   func setLayout() {
     // 컨트롤바
     contVC = ContBarViewController(buttonSize: .init(width: 50, height: 50), buttonPadding: 8, buttonSpace: 8)
@@ -79,14 +84,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.playList.urls.count
+    return self.playList.data.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: PlayListCell.reuseId, for: indexPath) as! PlayListCell
-    // 우선 재생목록은 오로지 현 플레이인덱스만 알려주는 용도로
     cell.selectionStyle = .none
-    cell.nameLabel.text = self.playList.urls[indexPath.row].lastPathComponent
+    // 우선 재생목록은 오로지 현 플레이인덱스만 알려주는 용도로
+    let music = self.playList.currentMusic
+    cell.nameLabel.text = music?.title ?? ""
+    
     if indexPath.row == self.playList.currentIndex {
       cell.backgroundColor = .lightGray
       cell.nameLabel.textColor = .white
@@ -99,6 +106,31 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // TODO: 리스트에서 선택으로 인덱스 변경시켜서 재생시키는건 나중에
+  }
+  
+  
+  // https://youngkdevlog.tistory.com/56
+  func updateMPNowPlayingInfoCenter(music: MusicInfo) {
+    print("call updateMPNowPlayingInfoCenter")
+    let center = MPNowPlayingInfoCenter.default()
+    var nowPlayingInfo: [String : Any] = center.nowPlayingInfo ?? .init()
+    nowPlayingInfo[MPMediaItemPropertyTitle] = music.title
+    nowPlayingInfo[MPMediaItemPropertyArtist] = music.artist
+    if let artwork = music.artworkImage {
+      nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size, requestHandler: { size in
+        return artwork
+      })
+    }
+    
+    // 콘텐츠 총 길이
+    nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = contVC?.avPlayer.duration
+    // 재생 중이면 1.0, 일시정지 등 재생 중이 아닐 때는 0.0
+//    nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = self.state == .playing ? 1.0 : 0.0
+    nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = contVC?.avPlayer.rate
+    
+    // 콘텐츠 현재 재생시간
+    nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = Int(contVC?.avPlayer.currentTime ?? 0)
+    center.nowPlayingInfo = nowPlayingInfo
   }
 
 }
