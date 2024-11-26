@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct MusicInfo {
+struct MusicInfo: Identifiable {
+  let id = UUID()
   var title: String
   var artist: String
   var artworkImage: UIImage?
