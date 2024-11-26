@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
-class PlayList {
+class PlayList: NSObject {
   
-  private init() {}
+  private override init() {
+    super.init()
+  }
   static var shared = PlayList()
   
   // 데이터가 비었을땐 false를 반환
@@ -104,4 +107,4 @@ class PlayList {
     index = temp < 0 ? data.count - 1 : temp
     return index
   }
-}
+} 
