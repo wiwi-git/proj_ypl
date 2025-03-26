@@ -36,4 +36,5 @@ struct PlayListView: View {
 
 #Preview {
   PlayListView()
+    .environmentObject(MusicPlayer())
 }

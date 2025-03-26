@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1700F5642C80C8C200B0DC61 /* forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1700F5632C80C8C200B0DC61 /* forest.mp3 */; };
 		1700F5802CC968CA00B0DC61 /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700F57F2CC968CA00B0DC61 /* MusicInfo.swift */; };
 		178546F42D910B510075AE57 /* ControllBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178546F32D910B510075AE57 /* ControllBarView.swift */; };
 		178546F62D910BB80075AE57 /* PlayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178546F52D910BB80075AE57 /* PlayListView.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1700F5632C80C8C200B0DC61 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
 		1700F57F2CC968CA00B0DC61 /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		178546F32D910B510075AE57 /* ControllBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllBarView.swift; sourceTree = "<group>"; };
 		178546F52D910BB80075AE57 /* PlayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListView.swift; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 		17B72EAE2C677ACB00C2CE2A /* PlojectYPL */ = {
 			isa = PBXGroup;
 			children = (
-				1700F5632C80C8C200B0DC61 /* forest.mp3 */,
 				17B72EAF2C677ACB00C2CE2A /* AppDelegate.swift */,
 				17B72EB12C677ACB00C2CE2A /* SceneDelegate.swift */,
 				17B72EB82C677ACC00C2CE2A /* Assets.xcassets */,
@@ -139,7 +136,6 @@
 			files = (
 				17B72EB92C677ACC00C2CE2A /* Assets.xcassets in Resources */,
 				17B72EBC2C677ACC00C2CE2A /* Base in Resources */,
-				1700F5642C80C8C200B0DC61 /* forest.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

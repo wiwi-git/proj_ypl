@@ -86,6 +86,7 @@ struct ControllBarView: View {
 
 #Preview {
   ControllBarView()
+    .environmentObject(MusicPlayer())
 }
 
 
