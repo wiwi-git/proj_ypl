@@ -126,8 +126,47 @@ class MusicPlayer : NSObject, ObservableObject {
       /// 이유를 모르겠다 옵션즈에 값을 넣으면 락스크린에 컨트롤바가 안생김....
       //      try audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers])
       try audioSession.setCategory(.playback, mode: .default, options: [])
+      
+      try audioSession.setActive(true)
+      
     } catch let error as NSError {
       print("audioSession 설정 오류 : \(error.localizedDescription)")
+    }
+    
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(handleInterruption),
+                                           name: AVAudioSession.interruptionNotification,
+                                           object: AVAudioSession.sharedInstance())
+  }
+  
+  @objc func handleInterruption(notification: Notification) {
+    guard let userInfo = notification.userInfo,
+          let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
+          let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+      return
+    }
+    
+    switch type {
+    case .began:
+      if self.isPlaying {
+        _ = self.pause()
+      }
+      
+    case .ended:
+      // An interruption ended. Resume playback, if appropriate.
+      
+      guard let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt else { return }
+      
+      let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+      
+      if options.contains(.shouldResume) {
+        // An interruption ended. Resume playback.
+        _ = self.play()
+      } else {
+        // An interruption ended. Don't resume playback.
+      }
+    default:
+      break
     }
   }
   
@@ -236,6 +275,7 @@ class MusicPlayer : NSObject, ObservableObject {
     return play(url: url!)
   }
   
+  // musicData가 비었거나 마지막 인덱스라면 동작하지 않도록 isLast 검사
   @objc func nextMusic() -> Bool {
     guard !isLast else { return false }
     
@@ -357,7 +397,7 @@ extension MusicPlayer: AVAudioPlayerDelegate {
   //    alert.message = error?.localizedDescription ?? "audioPlayerDecodeErrorDidOccur"
   //    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
   //    self.present(alert, animated: false)
-  //  }
+  //  } 
 }
 
 
