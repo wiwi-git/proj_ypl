@@ -38,11 +38,15 @@ class MusicPlayer : NSObject, ObservableObject {
     }
   }
   
-  var currentIndex: Int {
-    get {
-      return index
-    }
-  }
+  @Published private(set) var currentIndex: Int = 0
+  
+//  var currentIndex: Int {
+//    get {
+//      return index
+//    }
+//  }
+//  
+//  private var index: Int = 0
   
   var currentMusic: MusicInfo? {
     get {
@@ -51,8 +55,6 @@ class MusicPlayer : NSObject, ObservableObject {
     }
   }
   
-  private var index: Int = 0
-  
   
   override init() {
     super.init()
@@ -60,7 +62,18 @@ class MusicPlayer : NSObject, ObservableObject {
     remoteCommandCenterSetting()
   }
   
-  func loadList() {
+  // index만 변경되서 다음곡으로 넘어가는 등의 이벤트가 겹칠경우 문제가 발생할수 있다 변경하기전에 플레이를 중지시키자
+  func setCurrentIndex(at new: Int) {
+    print("called setCurrentIndex \(new)")
+    
+    guard !musicData.isEmpty,
+          new >= 0,
+          new < musicData.count else { return }
+    currentIndex = new
+  }
+  
+  func loadList() { 
+    
     let fileManager = FileManager.default
     let documentsUrl: URL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let filePath: URL = documentsUrl.appendingPathComponent("ypl_music")
@@ -105,19 +118,20 @@ class MusicPlayer : NSObject, ObservableObject {
   }
   
   /// 플레이 인덱스를 다음으로 설정 후 현재 인덱스 반환, 인덱스가 넘어갈시 0
+  ///
   func next() -> Int {
-    guard !musicData.isEmpty else { return 0 }
-    let temp: Int = index + 1
-    index = temp < musicData.count ? temp : 0
-    return index
+    guard !musicData.isEmpty else { return -1 }
+    let temp: Int = currentIndex + 1
+    currentIndex = temp < musicData.count ? temp : 0
+    return currentIndex
   }
   
   /// 플레이 인덱스를 이전으로 설정 후 현재 인덱스 반환, 인덱스가 0 보다 작을시 count -1으로
   func previus() -> Int {
-    guard !musicData.isEmpty else { return 0 }
-    let temp: Int = index - 1
-    index = temp < 0 ? musicData.count - 1 : temp
-    return index
+    guard !musicData.isEmpty else { return -1 }
+    let temp: Int = currentIndex - 1
+    currentIndex = temp < 0 ? musicData.count - 1 : temp
+    return currentIndex
   }
   
   private func initPlayer() {
@@ -355,12 +369,25 @@ class MusicPlayer : NSObject, ObservableObject {
     return true
   }
   
-  private func pause() -> Bool {
+  // 이걸 왜 private로 잡아놨는지 기억이 안난다 우선 변경
+  func pause() -> Bool {
     defer {
       NotificationCenter.default.post(name: .changedContInfo, object: nil)
     }
     avPlayer.pause()
     paused = true
+    isPlaying = false
+    stopUpdateTimer()
+    
+    return true
+  }
+  
+  func stop() -> Bool {
+    defer {
+      NotificationCenter.default.post(name: .changedContInfo, object: nil)
+    }
+    avPlayer.stop()
+    paused = false
     isPlaying = false
     stopUpdateTimer()
     
@@ -397,7 +424,7 @@ extension MusicPlayer: AVAudioPlayerDelegate {
   //    alert.message = error?.localizedDescription ?? "audioPlayerDecodeErrorDidOccur"
   //    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
   //    self.present(alert, animated: false)
-  //  } 
+  //  }
 }
 
 

@@ -37,17 +37,26 @@ struct ControllBarView: View {
       alignment: .leading,
       spacing: 4,
       content: {
+        // list update
         Button(action: {
           player.loadList()
         }, label: {
-          Text("내부파일 재로드")
+          Text("Reload")
+            .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
         })
-        .padding(.horizontal)
         .foregroundColor(.white)
         .background(Color.blue)
         .cornerRadius(10)
         .font(Font.title3)
+        .padding(.horizontal, 8)
         
+        // current music info
+        HStack {
+          Image(systemName: "star")
+          Text(player.currentMusic?.title ?? "no title")
+        }.padding(.horizontal, 8)
+        
+        // current music player bar
         HStack(content: {
           Text("\(minuteString(to: player.currentTime))")
           Slider(value: $player.currentTime, in: 0...player.duration) { isEditing in
