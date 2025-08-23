@@ -1,4 +1,7 @@
 # proj_ypl
+background audio play - 8 [반복 재생]
+(https://wiwi-pe.tistory.com/277)
+
 
 background audio play - 7 [Custom Modifier]
 (https://wiwi-pe.tistory.com/275)
