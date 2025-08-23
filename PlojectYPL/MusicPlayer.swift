@@ -10,12 +10,19 @@ import AVFoundation
 import MediaPlayer
 import SwiftUI
 
+/// 0이 노말, 루프, 원루프 순 ++
+enum PlayMode: Int, CaseIterable {
+  // normal > 음악목록 1회씩 재생,loop > 음악목록 끝나면 처음으로 가서 재생, one_loop > 현 재생 곡 계속 반복
+  // 전체 반복이 그냥 loop로 해놔도 되나?
+  case normal = 0, loop, one_loop
+}
+
 class MusicPlayer : NSObject, ObservableObject {
   @Published var currentTime: TimeInterval = 0
   @Published var duration: TimeInterval = 0
   @Published var isPlaying: Bool = false
-  
   @Published var musicData: [MusicInfo] = []
+  @Published private(set) var playMode: PlayMode = .normal
   
   var avPlayer: AVAudioPlayer = .init()
   var paused: Bool = false
@@ -62,10 +69,32 @@ class MusicPlayer : NSObject, ObservableObject {
     remoteCommandCenterSetting()
   }
   
-  // index만 변경되서 다음곡으로 넘어가는 등의 이벤트가 겹칠경우 문제가 발생할수 있다 변경하기전에 플레이를 중지시키자
-  func setCurrentIndex(at new: Int) {
-    print("called setCurrentIndex \(new)")
+  func chnagePlayeMode() -> Bool {
+    let oldValue: Int = self.playMode.rawValue
+    let modeCount: Int = PlayMode.allCases.count
+    let newValue = oldValue + 1
     
+    
+    if newValue < modeCount, let newMode = PlayMode(rawValue: newValue) {
+      playMode = newMode
+      return true
+    }
+    else if newValue == modeCount, let newMode = PlayMode(rawValue: 0) {
+      // 노말 모드로 변경
+      playMode = newMode
+      return true
+    }
+    else {
+      // 에러
+      print("error: 이상한 값이 되었다? oldValue:\(oldValue), newValue\(newValue), modeCount:\(modeCount)")
+      return false
+    }
+    
+//    return false
+  }
+  
+  // index만 변경되서 다음곡으로 넘어가는 등의 이벤트가 겹칠경우 문제가 발생할수 있다 변경하기전에 플레이를 중지시키자
+  func setCurrentIndex(at new: Int) {    
     guard !musicData.isEmpty,
           new >= 0,
           new < musicData.count else { return }
@@ -290,17 +319,31 @@ class MusicPlayer : NSObject, ObservableObject {
   }
   
   // musicData가 비었거나 마지막 인덱스라면 동작하지 않도록 isLast 검사
+  // + normal 일때만 라스트 검사 하기
   @objc func nextMusic() -> Bool {
-    guard !isLast else { return false }
+    if playMode == .normal {
+      guard !isLast else { return false }
+    }
     
     _ = next()
+//    let url = currentMusic?.url
+//    guard url != nil else {
+//      print("play url is nil")
+//      stopUpdateTimer()
+//      return false
+//    }
+//    
+//    return play(url: url!)
+    return currentMusicPlay()
+  }
+  
+  func currentMusicPlay() -> Bool {
     let url = currentMusic?.url
     guard url != nil else {
       print("play url is nil")
       stopUpdateTimer()
       return false
     }
-    
     return play(url: url!)
   }
   
@@ -323,6 +366,7 @@ class MusicPlayer : NSObject, ObservableObject {
   }
   // 사용자 연결은 파라미터 안받는 play로, 내가 만들었는데도 헷갈리네
   // TODO: 나중에 생각있으면 함수명좀 분리하자
+  // startUpdateTimer 포함
   private func play(url: URL?) -> Bool{
     defer {
       remoteCommandInfoCenterSetting()
@@ -415,7 +459,13 @@ class MusicPlayer : NSObject, ObservableObject {
 }
 extension MusicPlayer: AVAudioPlayerDelegate {
   func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    _ = nextMusic()
+    switch playMode {
+    case .normal, .loop:
+      _ = nextMusic()
+    case .one_loop:
+      _ = currentMusicPlay()
+      
+    }
   }
   
   //  func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: (any Error)?) {

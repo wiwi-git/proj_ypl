@@ -81,6 +81,12 @@ struct ControllBarView: View {
           ControllButton(text: "❯") {
             _ = player.nextMusic()
           }
+          ControllButton(text:
+                          player.playMode == .normal ?
+                         "→" : player.playMode == .one_loop ? "1" : "↺")
+          {
+            _ = player.chnagePlayeMode()
+          }
           
           Spacer()
         })// HStack
